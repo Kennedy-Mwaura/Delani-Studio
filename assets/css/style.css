@@ -51,4 +51,22 @@ header,
     padding: top 20px;
     
 }
-
+@keyframes bounce-effect {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-55px);
+    }
+    60% {
+      transform: translateY(-45px);
+    }
+  }
+#mouse {
+    animation: bounce-effect 3s infinite;
+}
+.about-section {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
