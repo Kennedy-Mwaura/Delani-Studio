@@ -75,3 +75,16 @@ header,
     padding-top: 30px;
     padding-bottom: 20px;
 }
+.services-2 {
+    padding: top 30px;
+
+}
+.s2-title {
+    padding-top:40px;
+    padding-bottom: 20px;
+}
+#product, #dev, #design{
+    display: none;
+    font-family: 'Copse', serif;
+    font-size: 16px;
+  }
