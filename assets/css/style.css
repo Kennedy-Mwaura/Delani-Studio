@@ -4,7 +4,15 @@ header,
 .intro-section {
   height: 100%;
 }
+@media (min-width: 800px) and (max-width: 850px) {
 
+    html,
+    body,
+    header,
+    .intro-2 {
+      height: 900px;
+    }
+  }
 @media (min-width: 560px) and (max-width: 740px) {
   html,
   body,
@@ -12,6 +20,10 @@ header,
 
   .intro-section {
     height: 470px;
+  }
+
+}
+.intro-section {
     background-image: url("/assets/img/backgrounds/h_image.jpg");
     background-position: center center;
     background-size: cover;
@@ -19,7 +31,24 @@ header,
     color: white;
     text-align: center;
     padding-top:17%; 
+}
+.logo{
+    margin-top: 12px;
+    margin-bottom: 24px;
+    width: 70px;
+    height: 70px;
   }
-
+.intro-section p {
+    padding-top: 3px;
+}
+.intro-section h1 {
+    margin: 20px;
+    padding: 20px;
+}
+.mouse {
+    margin-top: 18%;
+    padding-bottom: 50px;
+    padding: top 20px;
+    
 }
 
