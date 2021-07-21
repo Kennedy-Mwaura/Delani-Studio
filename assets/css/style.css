@@ -70,3 +70,8 @@ header,
     padding-top: 30px;
     padding-bottom: 20px;
 }
+.services {
+    background-image: url("/assets/img/backgrounds/s_image.jpg") ; 
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
