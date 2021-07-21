@@ -92,3 +92,17 @@ header,
     font-family: 'Copse', serif;
     font-size: 16px;
 }
+.contact {
+    background-image: url("/assets/img/backgrounds/c_image.jpg");
+    border: 1px solid whitesmoke;
+
+}
+form div div div {
+    border-top: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+}
+form label {
+    padding-top: 0px;
+    padding-left: 10px;
+}
