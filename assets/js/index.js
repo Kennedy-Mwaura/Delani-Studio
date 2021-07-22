@@ -48,17 +48,7 @@ let validateForm = () => {
         return false;
     }
 }
-let submitMailChimpForm =  (form) => {
-    // get the submit url 
-    let url = form.getAttribute('action');
-    url.replace('/post?u=', '/post-json?u=');
 
-}
-
-// serialize the form inmto a query string
-let serialize = (form) => {
-
-}
 document.addEventListener('submit', function (event) {
 
     // Only run on forms flagged for validation
@@ -69,3 +59,68 @@ document.addEventListener('submit', function (event) {
 
     submitMailChimpForm(event.target);
 }, false);
+
+// serialize the form inmto a query string
+let serialize = (form) => {
+    // setup our serialized data 
+    let serialized = '';
+        // Loop through each field in the form
+    for (i = 0; i < form.elements.length; i++) {
+
+        let field = form.elements[i];
+
+        // Don't serialize fields without a name, submits, buttons, file and reset inputs, and disabled fields
+        if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
+
+        // Convert field data to a query string
+        if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+            serialized += '&' + encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
+        }
+    }
+    
+        return serialized;
+
+}; 
+
+// dislay the contact form status
+let displayMailChimpStatus = (data) => {
+    
+   // Get the status message content area
+   var mcStatus = document.querySelector('.mc-status');
+   if (!mcStatus) return;
+
+   // Update our status message
+   mcStatus.innerHTML = data.msg;
+
+   // If error, add error class
+   if (data.result === 'error') {
+       mcStatus.classList.remove('success-message');
+       mcStatus.classList.add('error-message');
+       return;
+   }
+
+   // Otherwise, add success class
+   mcStatus.classList.remove('error-message');
+   mcStatus.classList.add('success-message');
+};
+
+let submitMailChimpForm =  (form) => {
+    // get the submit url 
+    let url = form.getAttribute('action');
+    url.replace('/post?u=', '/post-json?u=');
+    url += serialize(form) + '&c=displayMailChimpStatus'
+
+    // create script with url and callback (if specified)
+    let script = window.document.createElement('script');
+    script.src = url;
+
+    // inserrt script tag into the DOM (append to <head>)
+    let ref = window.document.getElementsByTagName('script')[0];
+    ref.parentNode.insertBefore(script, ref);
+
+    // After the script is loaded and executed, remove it 
+    script.onload = () => {
+    
+    }
+
+};
