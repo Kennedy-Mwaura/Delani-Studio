@@ -49,16 +49,6 @@ let validateForm = () => {
     }
 }
 
-document.addEventListener('submit', function (event) {
-
-    // Only run on forms flagged for validation
-    if (!event.target.classList.contains('validate')) return;
-
-    // Prevent form from submitting
-    event.preventDefault();
-
-    submitMailChimpForm(event.target);
-}, false);
 
 // serialize the form inmto a query string
 let serialize = (form) => {
@@ -117,10 +107,22 @@ let submitMailChimpForm =  (form) => {
     // inserrt script tag into the DOM (append to <head>)
     let ref = window.document.getElementsByTagName('script')[0];
     ref.parentNode.insertBefore(script, ref);
-
-    // After the script is loaded and executed, remove it 
-    script.onload = () => {
     
-    }
+
 
 };
+document.addEventListener('submit', function (event) {
+
+    // Only run on forms flagged for validation
+    if (!event.target.classList.contains('validate')) return;
+
+    // Prevent form from submitting
+    event.preventDefault();
+
+    submitMailChimpForm(event.target);
+    successModal = document.getElementById('heading');
+    userName = document.getElementById('mce-name').value;
+    userEmail = document.getElementById('mce-email').value;
+    successModal.innerHTML = "Hi " + userName + " Thank you for your message " + " We will reply to your email " + userEmail + " soon! "
+}, false);
+
