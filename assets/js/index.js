@@ -112,6 +112,9 @@ let submitMailChimpForm =  (form) => {
 
 };
 document.addEventListener('submit', function (event) {
+    successModal = document.getElementById('heading');
+    userName = document.getElementById('mce-name').value;
+    userEmail = document.getElementById('mce-email').value;
 
     // Only run on forms flagged for validation
     if (!event.target.classList.contains('validate')) return;
@@ -120,9 +123,13 @@ document.addEventListener('submit', function (event) {
     event.preventDefault();
 
     submitMailChimpForm(event.target);
-    successModal = document.getElementById('heading');
-    userName = document.getElementById('mce-name').value;
-    userEmail = document.getElementById('mce-email').value;
-    successModal.innerHTML = "Hi " + userName + " Thank you for your message " + " We will reply to your email " + userEmail + " soon! "
+    if (userName=="" || userEmail == "") {
+        alert("kindly fill in the required fields")
+    } else {
+        $('#modalAlertUser').modal('show')
+        successModal.innerHTML = "Hi " + userName + " Thank you for your message " + " We will reply to your email " + userEmail + " soon! "
+        
+    }
+    
 }, false);
 
