@@ -28,7 +28,7 @@ This is a  web application that takes a user's birthday and calculates the day o
   
 ## Link to live site
 
-[Check the live version here](https://kennedy-mwaura.github.io/Akan-name-generator/)
+[Check the live version here](https://kennedy-mwaura.github.io/Delani-Studio/)
 
 ## Technologies Used
 
