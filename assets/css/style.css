@@ -24,7 +24,7 @@ header,
 
 }
 .intro-section {
-    background-image: url("/assets/img/backgrounds/h_image.jpg");
+    background-image: url("https://kennedy-mwaura.github.io/Delani-Studio/assets/img/backgrounds/h_image.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@ header,
     padding-bottom: 20px;
 }
 .services {
-    background-image: url("/assets/img/backgrounds/s_image.jpg") ; 
+    background-image: url("https://kennedy-mwaura.github.io/Delani-Studio/assets/img/backgrounds/s_image.jpg") ; 
     padding-top: 30px;
     padding-bottom: 20px;
 }
@@ -93,7 +93,7 @@ header,
     font-size: 16px;
 }
 .contact {
-    background-image: url("/assets/img/backgrounds/c_image.jpg");
+    background-image: url("https://kennedy-mwaura.github.io/Delani-Studio/git assets/img/backgrounds/c_image.jpg");
     border: 1px solid whitesmoke;
 
 }
