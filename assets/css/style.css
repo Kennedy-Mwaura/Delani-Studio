@@ -24,7 +24,7 @@ header,
 
 }
 .intro-section {
-    background-image: url("assets/img/backgrounds/h_image.jpg");
+    background-image: url("");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@ header,
     padding-bottom: 20px;
 }
 .services {
-    background-image: url("assets/img/backgrounds/s_image.jpg") ; 
+    background-image: url(""); 
     padding-top: 30px;
     padding-bottom: 20px;
 }
@@ -93,7 +93,7 @@ header,
     font-size: 16px;
 }
 .contact {
-    background-image: url("assets/img/backgrounds/c_image.jpg");
+    background-image: url("");
     border: 1px solid whitesmoke;
 
 }
